@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO Meta Tags -->
+  <title>Sushant Pokhriyal | Mathematician | Operator Theory & Dynamical Systems</title>
+  <meta name="description" content="Sushant Pokhriyal is a postdoctoral fellow at the University of South Florida working on operator theory, data-driven dynamical systems, Liouville operators, RKHS, and operator learning." />
+  <meta name="keywords" content="Sushant Pokhriyal, operator theory, dynamical systems, Liouville operator, Perron-Frobenius, DMD, RKHS, reproducing kernel Hilbert space, neural operators, operator learning, mathematics, postdoc, University of South Florida" />
+  <meta name="author" content="Sushant Pokhriyal" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://sushantpokhriyal.com/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Sushant Pokhriyal | Mathematician" />
+  <meta property="og:description" content="Postdoctoral Fellow at University of South Florida. Research in operator theory, Liouville operators, data-driven dynamical systems, and operator learning." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://sushantpokhriyal.com/" />
+
+  <!-- Schema.org structured data for Google -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Sushant Pokhriyal",
+    "jobTitle": "Postdoctoral Fellow",
+    "affiliation": {
+      "@type": "Organization",
+      "name": "University of South Florida",
+      "department": "Department of Mathematics"
+    },
+    "alumniOf": {
+      "@type": "Organization",
+      "name": "Shiv Nadar University"
+    },
+    "email": "sushantpokhriyal@gmail.com",
+    "url": "https://sushantpokhriyal.com",
+    "sameAs": [
+      "https://sites.google.com/view/sushantpokhriyal",
+      "https://linkedin.com/in/sushant-pokhriyal",
+      "https://github.com/Sushantpokhriyal"
+    ],
+    "knowsAbout": ["Operator Theory", "Dynamical Systems", "Liouville Operator", "Reproducing Kernel Hilbert Spaces", "Operator Learning", "Harmonic Analysis"]
+  }
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink: #1a1612;
+      --ink-soft: #4a4540;
+      --ink-mute: #8a8480;
+      --paper: #f7f4ef;
+      --paper-warm: #ede9e2;
+      --paper-deep: #e0dbd2;
+      --accent: #8b3a2a;
+      --accent-light: #c4614d;
+      --accent-pale: #f0e0db;
+      --gold: #b5922a;
+      --gold-pale: #f5edda;
+      --rule: #d4cfc8;
+      --ff-display: 'Cormorant Garamond', Georgia, serif;
+      --ff-mono: 'DM Mono', 'Courier New', monospace;
+      --ff-body: 'DM Sans', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--ff-body);
+      font-size: 15px;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ── NOISE TEXTURE OVERLAY ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.5;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.2rem 4rem;
+      background: rgba(247, 244, 239, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .nav-name {
+      font-family: var(--ff-display);
+      font-size: 1.1rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: var(--ff-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--accent); }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      position: relative;
+    }
+
+    .hero-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 10rem 4rem 6rem 4rem;
+      border-right: 1px solid var(--rule);
+      position: relative;
+    }
+
+    .hero-tag {
+      font-family: var(--ff-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .hero-tag::before {
+      content: '';
+      display: block;
+      width: 2rem;
+      height: 1px;
+      background: var(--accent);
+    }
+
+    .hero-name {
+      font-family: var(--ff-display);
+      font-size: clamp(3rem, 5vw, 5.5rem);
+      font-weight: 300;
+      line-height: 1.05;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+      margin-bottom: 2rem;
+    }
+
+    .hero-name em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .hero-desc {
+      font-size: 1rem;
+      color: var(--ink-soft);
+      line-height: 1.8;
+      max-width: 42ch;
+      margin-bottom: 3rem;
+    }
+
+    .hero-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      font-family: var(--ff-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: all 0.2s;
+      border: 1px solid;
+    }
+
+    .btn-primary {
+      background: var(--ink);
+      color: var(--paper);
+      border-color: var(--ink);
+    }
+
+    .btn-primary:hover {
+      background: var(--accent);
+      border-color: var(--accent);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--ink);
+      border-color: var(--rule);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--ink);
+    }
+
+    .hero-right {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 10rem 4rem 6rem 4rem;
+      background: var(--paper-warm);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Decorative math-like background element */
+    .hero-right::before {
+      content: '∫ₓ Lf dμ';
+      position: absolute;
+      top: 8rem;
+      right: 3rem;
+      font-family: var(--ff-display);
+      font-size: 5rem;
+      font-weight: 300;
+      color: var(--paper-deep);
+      letter-spacing: -0.02em;
+      user-select: none;
+      pointer-events: none;
+    }
+
+    .stat-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .stat-card {
+      background: var(--paper);
+      border: 1px solid var(--rule);
+      padding: 1.5rem;
+    }
+
+    .stat-num {
+      font-family: var(--ff-display);
+      font-size: 2.8rem;
+      font-weight: 300;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 0.3rem;
+    }
+
+    .stat-label {
+      font-family: var(--ff-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink-mute);
+    }
+
+    .affiliation-block {
+      border-top: 1px solid var(--rule);
+      padding-top: 2rem;
+    }
+
+    .aff-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 0.6rem 0;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .aff-role {
+      font-family: var(--ff-body);
+      font-size: 0.85rem;
+      color: var(--ink);
+      font-weight: 500;
+    }
+
+    .aff-place {
+      font-family: var(--ff-mono);
+      font-size: 0.68rem;
+      color: var(--ink-mute);
+      letter-spacing: 0.05em;
+    }
+
+    /* ── SECTIONS ── */
+    section {
+      position: relative;
+      z-index: 1;
+    }
+
+    .section-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 6rem 4rem;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      gap: 1.5rem;
+      margin-bottom: 3.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .section-num {
+      font-family: var(--ff-mono);
+      font-size: 0.65rem;
+      color: var(--accent);
+      letter-spacing: 0.1em;
+    }
+
+    .section-title {
+      font-family: var(--ff-display);
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      font-weight: 300;
+      color: var(--ink);
+    }
+
+    /* ── RESEARCH ── */
+    #research { background: var(--paper); }
+
+    .research-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5px;
+      background: var(--rule);
+      border: 1px solid var(--rule);
+    }
+
+    .research-card {
+      background: var(--paper);
+      padding: 2.5rem;
+      transition: background 0.2s;
+    }
+
+    .research-card:hover { background: var(--accent-pale); }
+
+    .research-icon {
+      font-family: var(--ff-display);
+      font-size: 2rem;
+      color: var(--accent);
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .research-card h3 {
+      font-family: var(--ff-display);
+      font-size: 1.25rem;
+      font-weight: 500;
+      margin-bottom: 0.75rem;
+      color: var(--ink);
+    }
+
+    .research-card p {
+      font-size: 0.875rem;
+      color: var(--ink-soft);
+      line-height: 1.75;
+    }
+
+    /* ── PUBLICATIONS ── */
+    #publications { background: var(--paper-warm); }
+
+    .pub-category {
+      margin-bottom: 3rem;
+    }
+
+    .pub-cat-label {
+      font-family: var(--ff-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .pub-cat-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--rule);
+    }
+
+    .pub-item {
+      display: grid;
+      grid-template-columns: 2rem 1fr;
+      gap: 1rem;
+      padding: 1.25rem 0;
+      border-bottom: 1px solid var(--rule);
+      align-items: start;
+    }
+
+    .pub-num {
+      font-family: var(--ff-mono);
+      font-size: 0.65rem;
+      color: var(--ink-mute);
+      padding-top: 0.25rem;
+    }
+
+    .pub-title {
+      font-family: var(--ff-display);
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: var(--ink);
+      margin-bottom: 0.3rem;
+      font-style: italic;
+      line-height: 1.4;
+    }
+
+    .pub-authors {
+      font-size: 0.8rem;
+      color: var(--ink-mute);
+      margin-bottom: 0.2rem;
+    }
+
+    .pub-authors strong {
+      color: var(--ink-soft);
+      font-weight: 500;
+    }
+
+    .pub-venue {
+      font-family: var(--ff-mono);
+      font-size: 0.68rem;
+      color: var(--accent);
+      letter-spacing: 0.04em;
+    }
+
+    .pub-badge {
+      display: inline-block;
+      padding: 0.15rem 0.6rem;
+      font-family: var(--ff-mono);
+      font-size: 0.58rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border: 1px solid;
+      margin-left: 0.5rem;
+      vertical-align: middle;
+    }
+
+    .badge-prep { color: var(--ink-mute); border-color: var(--rule); }
+    .badge-review { color: var(--gold); border-color: var(--gold); }
+    .badge-pub { color: var(--accent); border-color: var(--accent); }
+
+    /* ── CV / TIMELINE ── */
+    #cv { background: var(--paper); }
+
+    .timeline {
+      position: relative;
+      padding-left: 2rem;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.5rem;
+      bottom: 0;
+      width: 1px;
+      background: var(--rule);
+    }
+
+    .tl-item {
+      position: relative;
+      padding: 0 0 2.5rem 2rem;
+    }
+
+    .tl-item::before {
+      content: '';
+      position: absolute;
+      left: -0.3rem;
+      top: 0.45rem;
+      width: 0.6rem;
+      height: 0.6rem;
+      border-radius: 50%;
+      background: var(--paper);
+      border: 1px solid var(--accent);
+    }
+
+    .tl-year {
+      font-family: var(--ff-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      margin-bottom: 0.3rem;
+    }
+
+    .tl-role {
+      font-family: var(--ff-display);
+      font-size: 1.15rem;
+      font-weight: 500;
+      color: var(--ink);
+      margin-bottom: 0.2rem;
+    }
+
+    .tl-place {
+      font-size: 0.85rem;
+      color: var(--ink-soft);
+    }
+
+    .tl-note {
+      font-size: 0.8rem;
+      color: var(--ink-mute);
+      margin-top: 0.3rem;
+      font-style: italic;
+    }
+
+    /* ── CONTACT ── */
+    #contact { background: var(--ink); color: var(--paper); }
+
+    #contact .section-title { color: var(--paper); }
+    #contact .section-num { color: var(--accent-light); }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .contact-blurb {
+      font-family: var(--ff-display);
+      font-size: 1.6rem;
+      font-weight: 300;
+      line-height: 1.5;
+      color: var(--paper-warm);
+      margin-bottom: 2rem;
+    }
+
+    .contact-detail {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    .contact-row {
+      display: flex;
+      align-items: baseline;
+      gap: 1rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .contact-label {
+      font-family: var(--ff-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink-mute);
+      min-width: 5rem;
+    }
+
+    .contact-val {
+      font-size: 0.9rem;
+      color: var(--paper);
+    }
+
+    .contact-val a {
+      color: var(--accent-light);
+      text-decoration: none;
+    }
+
+    .contact-val a:hover { text-decoration: underline; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--ink);
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding: 1.5rem 4rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    footer p {
+      font-family: var(--ff-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.08em;
+      color: var(--ink-mute);
+    }
+
+    /* ── RESEARCH TAGS ── */
+    .research-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 3rem;
+    }
+
+    .r-tag {
+      font-family: var(--ff-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      padding: 0.5rem 1.1rem;
+      border: 1px solid var(--rule);
+      color: var(--ink-soft);
+      background: var(--paper-warm);
+      transition: all 0.2s;
+    }
+
+    .r-tag:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: var(--accent-pale);
+    }
+
+    .research-body {
+      max-width: 72ch;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      border-left: 2px solid var(--accent);
+      padding-left: 2rem;
+    }
+
+    .research-body p {
+      font-size: 0.975rem;
+      color: var(--ink-soft);
+      line-height: 1.85;
+    }
+
+    .research-body strong {
+      color: var(--ink);
+      font-weight: 500;
+    }
+
+    /* ── TEACHING ── */
+    #teaching { background: var(--paper-warm); }
+
+    .teaching-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    .philosophy-block h3 {
+      font-family: var(--ff-display);
+      font-size: 1.4rem;
+      font-weight: 400;
+      color: var(--ink);
+      margin-bottom: 1.5rem;
+      font-style: italic;
+    }
+
+    .principle-item {
+      padding: 1.2rem 0;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .principle-item:first-of-type { border-top: 1px solid var(--rule); }
+
+    .principle-title {
+      font-family: var(--ff-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.4rem;
+    }
+
+    .principle-desc {
+      font-size: 0.875rem;
+      color: var(--ink-soft);
+      line-height: 1.75;
+    }
+
+    .courses-block h3 {
+      font-family: var(--ff-display);
+      font-size: 1.4rem;
+      font-weight: 400;
+      color: var(--ink);
+      margin-bottom: 1.5rem;
+      font-style: italic;
+    }
+
+    .course-cat-label {
+      font-family: var(--ff-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .course-cat-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--rule);
+    }
+
+    .course-item {
+      display: grid;
+      grid-template-columns: 7rem 1fr auto;
+      gap: 1rem;
+      align-items: baseline;
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .course-code {
+      font-family: var(--ff-mono);
+      font-size: 0.7rem;
+      color: var(--accent);
+      letter-spacing: 0.04em;
+    }
+
+    .course-name {
+      font-family: var(--ff-display);
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: var(--ink);
+    }
+
+    .course-terms {
+      font-family: var(--ff-mono);
+      font-size: 0.65rem;
+      color: var(--ink-mute);
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    @media (max-width: 900px) {
+      .teaching-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .course-item { grid-template-columns: 1fr; gap: 0.2rem; }
+      .course-terms { text-align: left; }
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-tag   { animation: fadeUp 0.6s ease both; animation-delay: 0.1s; }
+    .hero-name  { animation: fadeUp 0.6s ease both; animation-delay: 0.2s; }
+    .hero-desc  { animation: fadeUp 0.6s ease both; animation-delay: 0.3s; }
+    .hero-links { animation: fadeUp 0.6s ease both; animation-delay: 0.4s; }
+    .stat-grid  { animation: fadeUp 0.6s ease both; animation-delay: 0.3s; }
+    .affiliation-block { animation: fadeUp 0.6s ease both; animation-delay: 0.45s; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { gap: 1.5rem; }
+
+      .hero { grid-template-columns: 1fr; }
+      .hero-left { padding: 8rem 1.5rem 3rem; border-right: none; border-bottom: 1px solid var(--rule); }
+      .hero-right { padding: 3rem 1.5rem 4rem; }
+      .hero-right::before { font-size: 3rem; top: 1.5rem; }
+
+      .research-grid { grid-template-columns: 1fr; }
+      .contact-grid  { grid-template-columns: 1fr; gap: 2rem; }
+      .section-inner { padding: 4rem 1.5rem; }
+      footer { flex-direction: column; gap: 0.5rem; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-name">Sushant Pokhriyal</a>
+    <ul class="nav-links">
+      <li><a href="#research">Research</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#teaching">Teaching</a></li>
+      <li><a href="#cv">CV</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-left">
+      <div class="hero-tag">Postdoctoral Fellow · Mathematics</div>
+      <h1 class="hero-name">Sushant<br /><em>Pokhriyal</em></h1>
+      <p class="hero-desc">
+        I work at the interface of operator theory, reproducing kernel Hilbert spaces, and data-driven dynamical systems — embedding nonlinear dynamics into infinite-dimensional linear operator frameworks to unlock rigorous spectral analysis.
+      </p>
+      <div class="hero-links">
+        <a href="#publications" class="btn btn-primary">View Publications</a>
+        <a href="https://github.com/Sushantpokhriyal" target="_blank" class="btn btn-secondary">GitHub</a>
+        <a href="mailto:sushantpokhriyal@gmail.com" class="btn btn-secondary">Get in Touch</a>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="stat-grid">
+        <div class="stat-card">
+          <div class="stat-num">2</div>
+          <div class="stat-label">Published Papers</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">3</div>
+          <div class="stat-label">Under Review</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">3</div>
+          <div class="stat-label">In Preparation</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">∞</div>
+          <div class="stat-label">Dimensional Spaces</div>
+        </div>
+      </div>
+
+      <div class="affiliation-block">
+        <div class="aff-item">
+          <span class="aff-role">Postdoctoral Fellow</span>
+          <span class="aff-place">Univ. of South Florida · 2023–</span>
+        </div>
+        <div class="aff-item">
+          <span class="aff-role">Visiting Fellow</span>
+          <span class="aff-place">ISI Bangalore · 2022–2023</span>
+        </div>
+        <div class="aff-item">
+          <span class="aff-role">Ph.D. in Mathematics</span>
+          <span class="aff-place">Shiv Nadar University · 2022</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESEARCH -->
+  <section id="research">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-num">01</span>
+        <h2 class="section-title">Research Interests</h2>
+      </div>
+
+      <div class="research-tags">
+        <span class="r-tag">Operator Theory</span>
+        <span class="r-tag">Function Theory</span>
+        <span class="r-tag">Reproducing Kernel Hilbert Spaces</span>
+        <span class="r-tag">Frames on Hilbert Spaces</span>
+        <span class="r-tag">Sampling Theory and Reconstruction</span>
+        <span class="r-tag">Non-linear Dynamical System Approximation</span>
+        <span class="r-tag">Deep Learning</span>
+      </div>
+
+      <div class="research-body">
+        <p>My research interest spans <strong>Dynamical Systems, Operator Theory, Complex Analysis,</strong> and <strong>Applied Harmonic Analysis.</strong> During my Ph.D., my research was mainly focused on characterizing the invariant subspaces of non-trivial operators.</p>
+        <p>Currently, I am working on the problems of <strong>data-driven dynamical systems.</strong> I am exploring the idea of embedding the finite-dimensional non-linear dynamics system into infinite-dimensional Hilbert space of continuous functions (RKHS) under the action of linear operators, like the <strong>Liouville Operator.</strong> This approach facilitates the transformation of non-linear systems into linear systems, offering deeper insight into their behaviour.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PUBLICATIONS -->
+  <section id="publications">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-num">02</span>
+        <h2 class="section-title">Publications</h2>
+      </div>
+
+      <!-- In Preparation -->
+      <div class="pub-category">
+        <div class="pub-cat-label">In Preparation</div>
+
+        <div class="pub-item">
+          <div class="pub-num">1</div>
+          <div>
+            <div class="pub-title">Compressed Liouville Operators over the Paley-Wiener Space for System Approximation</div>
+            <div class="pub-authors">with <strong>Joel A. Rosenfeld</strong></div>
+            <div class="pub-venue"><span class="pub-badge badge-prep">In Preparation</span></div>
+          </div>
+        </div>
+
+        <div class="pub-item">
+          <div class="pub-num">2</div>
+          <div>
+            <div class="pub-title">Kernalized Active Subspaces</div>
+            <div class="pub-authors">with <strong>Joel A. Rosenfeld</strong> and Benjamin Russo</div>
+            <div class="pub-venue"><span class="pub-badge badge-prep">In Preparation</span></div>
+          </div>
+        </div>
+
+        <div class="pub-item">
+          <div class="pub-num">3</div>
+          <div>
+            <div class="pub-title">Weak SINDy and Mori-Zwanzig Formalism of Dynamical Systems under the Action of Occupational Kernel</div>
+            <div class="pub-authors">with Chukwuebuka Amagwula and <strong>Joel A. Rosenfeld</strong></div>
+            <div class="pub-venue"><span class="pub-badge badge-prep">In Preparation</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Under Review -->
+      <div class="pub-category">
+        <div class="pub-cat-label">Under Review</div>
+
+        <div class="pub-item">
+          <div class="pub-num">1</div>
+          <div>
+            <div class="pub-title">Fractional-Order Dynamical Control using Kolmogorov-Arnold Networks</div>
+            <div class="pub-authors">with Hongwei Chen, <strong>Joel A. Rosenfeld</strong>, and Tansel Yucelen</div>
+            <div class="pub-venue"><span class="pub-badge badge-review">Under Review</span></div>
+          </div>
+        </div>
+
+        <div class="pub-item">
+          <div class="pub-num">2</div>
+          <div>
+            <div class="pub-title">Restricted Liouville Operators for the Study of Non-Analytic Dynamics within the Disc</div>
+            <div class="pub-authors">with <strong>Joel A. Rosenfeld</strong></div>
+            <div class="pub-venue"><span class="pub-badge badge-review">Under Review</span></div>
+          </div>
+        </div>
+
+        <div class="pub-item">
+          <div class="pub-num">3</div>
+          <div>
+            <div class="pub-title">Integral Formulation of QENDy for Robust Nonlinear System Identification</div>
+            <div class="pub-authors">with Nikhil Saran, Stefan Klus, Rushikhesh Kamalapurkar, and <strong>Joel A. Rosenfeld</strong></div>
+            <div class="pub-venue"><span class="pub-badge badge-review">Under Review</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Published -->
+      <div class="pub-category">
+        <div class="pub-cat-label">Published</div>
+
+        <div class="pub-item">
+          <div class="pub-num">1</div>
+          <div>
+            <div class="pub-title">Multivariate Sub Hardy Hilbert Spaces Invariant under the Action of n-tuple of Finite Blaschke Factors</div>
+            <div class="pub-authors">with Sneh Lata and Dinesh Singh</div>
+            <div class="pub-venue">
+              Journal of Mathematical Analysis and Applications, Vol. 512(2), 2022
+              <span class="pub-badge badge-pub">Published</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="pub-item">
+          <div class="pub-num">2</div>
+          <div>
+            <div class="pub-title">Invariant Subspaces of Powers of Unicellular Operators</div>
+            <div class="pub-authors">with Sneh Lata and Dinesh Singh</div>
+            <div class="pub-venue">
+              New York Journal of Mathematics, Vol. 29, 2023
+              <span class="pub-badge badge-pub">Published</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEACHING -->
+  <section id="teaching">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-num">03</span>
+        <h2 class="section-title">Teaching</h2>
+      </div>
+
+      <div class="teaching-grid">
+        <!-- Philosophy -->
+        <div class="philosophy-block">
+          <h3>Teaching Philosophy</h3>
+          <p style="font-size:0.9rem;color:var(--ink-soft);line-height:1.8;margin-bottom:1.5rem;">
+            As a serious mathematician, I have always believed that if learned properly, mathematics is a fascinating subject, and the best way to learn more is to talk about it with other people.
+          </p>
+
+          <div class="principle-item">
+            <div class="principle-title">Be Transparent</div>
+            <div class="principle-desc">I provide my students detailed rubrics for assignments and exams, along with annotated examples of high-quality work.</div>
+          </div>
+          <div class="principle-item">
+            <div class="principle-title">Be Accessible & Respect Time</div>
+            <div class="principle-desc">I want my students to understand that I am investing my time in their education. I support learning beyond the classroom and offer flexible appointments — in-person or virtual.</div>
+          </div>
+          <div class="principle-item">
+            <div class="principle-title">Show the Bigger Picture</div>
+            <div class="principle-desc">Students need to know why, what, and how in order to be motivated. At the start of each class I provide examples to convey the big picture of the subject matter.</div>
+          </div>
+        </div>
+
+        <!-- Courses -->
+        <div class="courses-block">
+          <h3>Courses Taught</h3>
+          <p style="font-size:0.85rem;color:var(--ink-mute);margin-bottom:1.5rem;">As a postdoctoral scholar at the University of South Florida, I had the wonderful opportunity to instruct the following undergraduate courses.</p>
+
+          <div class="course-cat-label">Main Instructor</div>
+
+          <div class="course-item">
+            <div class="course-code">MAC 2283</div>
+            <div class="course-name">Engineering Calculus III</div>
+            <div class="course-terms">Fall 2023 · Spring 2024</div>
+          </div>
+          <div class="course-item">
+            <div class="course-code">MAP 2302</div>
+            <div class="course-name">Differential Equations</div>
+            <div class="course-terms">Spring 2024 · Fall 2025</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CV / TIMELINE -->
+  <section id="cv">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-num">04</span>
+        <h2 class="section-title">Academic Journey</h2>
+      </div>
+
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-year">2023 – Present</div>
+          <div class="tl-role">Postdoctoral Fellow</div>
+          <div class="tl-place">Department of Mathematics, University of South Florida</div>
+          <div class="tl-note">Working with Prof. Joel A. Rosenfeld on data-driven operator-theoretic methods for dynamical systems.</div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-year">2022 – 2023</div>
+          <div class="tl-role">Visiting Fellow</div>
+          <div class="tl-place">Indian Statistical Institute (ISI), Bangalore</div>
+          <div class="tl-note">Under the supervision of Prof. Jaydeb Sarkar.</div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-year">2022</div>
+          <div class="tl-role">Ph.D. in Mathematics</div>
+          <div class="tl-place">Shiv Nadar University, India</div>
+          <div class="tl-note">Supervised by Prof. Sneh Lata. Thesis on invariant subspaces of non-trivial operators in Hardy and sub-Hardy Hilbert spaces.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-num">05</span>
+        <h2 class="section-title">Contact</h2>
+      </div>
+
+      <div class="contact-grid">
+        <div>
+          <p class="contact-blurb">
+            Open to research collaborations, academic opportunities, and discussions at the intersection of operator theory and machine learning.
+          </p>
+          <a href="mailto:sushantpokhriyal@gmail.com" class="btn btn-primary">Send an Email</a>
+        </div>
+
+        <div class="contact-detail">
+          <div class="contact-row">
+            <span class="contact-label">Email</span>
+            <span class="contact-val">
+              <a href="mailto:sushantpokhriyal@gmail.com">sushantpokhriyal@gmail.com</a><br/>
+              <a href="mailto:spokhriyal@usf.edu">spokhriyal@usf.edu</a>
+            </span>
+          </div>
+          <div class="contact-row">
+            <span class="contact-label">Position</span>
+            <span class="contact-val">Postdoctoral Fellow, Dept. of Mathematics<br/>University of South Florida</span>
+          </div>
+          <div class="contact-row">
+            <span class="contact-label">GitHub</span>
+            <span class="contact-val"><a href="https://github.com/Sushantpokhriyal" target="_blank">github.com/Sushantpokhriyal</a></span>
+          </div>
+          <div class="contact-row">
+            <span class="contact-label">LinkedIn</span>
+            <span class="contact-val"><a href="https://linkedin.com/in/sushant-pokhriyal" target="_blank">linkedin.com/in/sushant-pokhriyal</a></span>
+          </div>
+          <div class="contact-row">
+            <span class="contact-label">Profile</span>
+            <span class="contact-val"><a href="https:/
